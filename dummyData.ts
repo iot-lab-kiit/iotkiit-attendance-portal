@@ -38,6 +38,7 @@ const members: Array<Member> = [
         hostel : 'Hostel 3',
         year : 3
     },
+    
 ];
 
 

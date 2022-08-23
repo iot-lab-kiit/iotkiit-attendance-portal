@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Box, Grid, InputAdornment, TextField, Typography } from "@mui/material";
-import Image from "next/image";
 import MemberCard from "../../components/MemberCard";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import { members } from "../../dummyData";
@@ -12,12 +11,16 @@ const Attendance = () => {
             <Head>
                 <title>IoT Attendance Portal</title>
             </Head>
-
-            <Box>
-
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                backgroundColor: 'rgb(243, 249, 255)',
+                minHeight: '80vh',
+            }}>
                 <Box sx={{
                     mt: 3
-
                 }}>
                     <TextField
                         fullWidth
@@ -32,12 +35,15 @@ const Attendance = () => {
                         variant="standard"
                     />
                 </Box>
-
-                <Typography variant="h4" mt={5}>
+                <Typography variant="h5" mt={5} color={`rgb(71, 99, 183)`}>
                     Member Details
                 </Typography>
-                <Grid container gap={2} mt={5} mx={2}>
-
+                <Grid container gap={4} mt={5} mx={2} sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
                     {members.map((member: any) => (
                         <MemberCard key={member.id} membersData={member} />
                     ))}

@@ -13,28 +13,35 @@ const MemberCard: FC<any> = ({ membersData }: any): JSX.Element => {
         router.push(`/attendance/${id}`);
     }
 
-
     return (
         <>
             <Link href="/">
-                <a onClick={(e) => handleClick(e, `/${id}`)}><Grid item width={200} border={'1px solid'}
-                    boxShadow={'0px 1px 0px rgba(0, 0, 0, 0.05)'}
-                    borderRadius={'4px'}>
-                    <Box display={'flex'} justifyContent={'center'} mt={1}>
-                        <Image
-                            alt="Member Image"
-                            src={avatar as any}
-                            width={50}
-                            height={50}
-                        />
-                    </Box>
-                    <Box mx={1} mt={1}>
-                        <Typography variant="body1">Name : {name}</Typography>
-                        <Typography variant="body1">Roll : {id}</Typography>
-                        <Typography variant="body1">Hostel : {hostel}</Typography>
-                        <Typography variant="body1">Year : {year}</Typography>
-                    </Box>
-                </Grid></a>
+                <a onClick={(e) => handleClick(e, `/${id}`)}>
+                    <Grid item width={210} sx={{
+                        borderRadius: '7px',
+                        backgroundColor: '#FFF',
+                        margin: { xs: '3px', sm: '10px', lg: '20px' },
+                        padding: { xs: '3px', sm: '10px', lg: '20px' },
+                    }}>
+                        <Box display={'flex'} justifyContent={'center'} mt={1} sx={{
+                            padding: '10px',
+                        }}>
+                            <Image
+                                
+                                alt="Member Image"
+                                src={avatar as any}
+                                width={50}
+                                height={50}
+                            />
+                        </Box>
+                        <Box mx={1} mt={1} color={`rgb(46,  79, 77)`}>
+                            <Typography variant="body1">Name : {name}</Typography>
+                            <Typography variant="body1">Roll No : {id}</Typography>
+                            <Typography variant="body1">Hostel : {hostel}</Typography>
+                            <Typography variant="body1">Year : {year}</Typography>
+                        </Box>
+                    </Grid>
+                </a>
             </Link>
 
         </>

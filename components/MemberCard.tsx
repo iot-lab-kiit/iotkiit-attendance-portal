@@ -17,29 +17,33 @@ const MemberCard: FC<any> = ({ membersData }: any): JSX.Element => {
         <>
             <Link href="/">
                 <a onClick={(e) => handleClick(e, `/${id}`)}>
-                    <Grid item width={210} sx={{
+                    <Grid item  sx={{
                         borderRadius: '7px',
-                        backgroundColor: '#FFF',
+                        backgroundColor: 'rgb(243, 249, 255)',
                         margin: { xs: '3px', sm: '10px', lg: '20px' },
                         padding: { xs: '3px', sm: '10px', lg: '20px' },
+                        ['@media (max-width:567px)']: {width:"290px"},
+                        width:"350px"
                     }}>
-                        <Box display={'flex'} justifyContent={'center'} mt={1} sx={{
+                        <Box display={'flex'} justifyContent={'space-between'} mt={1} sx={{
                             padding: '10px',
                         }}>
-                            <Image
-                                
-                                alt="Member Image"
-                                src={avatar as any}
-                                width={50}
-                                height={50}
-                            />
-                        </Box>
-                        <Box mx={1} mt={1} color={`rgb(46,  79, 77)`}>
+                            <Box mx={1} mt={1} color={`rgb(46,  79, 77)`}>
                             <Typography variant="body1">Name : {name}</Typography>
                             <Typography variant="body1">Roll No : {id}</Typography>
                             <Typography variant="body1">Hostel : {hostel}</Typography>
                             <Typography variant="body1">Year : {year}</Typography>
                         </Box>
+                            <Image
+                                style={{borderRadius:'50%'}}
+                                alt="Member Image"
+                                src={avatar as any}
+                                width={90}
+                                height={40}
+                            />
+                            
+                        </Box>
+                        
                     </Grid>
                 </a>
             </Link>

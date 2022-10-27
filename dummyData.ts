@@ -8,6 +8,7 @@ export interface Member {
     year : number;
     intime : string;
     outtime : string;
+    date: string;
 }
 
 const members: Array<Member> = [
@@ -17,34 +18,37 @@ const members: Array<Member> = [
         name: 'John Doe',
         hostel : 'Hostel 1',
         intime : '13:50', 
-        outtime : '13:50',
-        year : 1
+        outtime : '14:50',
+        year : 1,
+        date: '2022-10-26'
     },
     {
         id: 2005287,
         avatar : 'https://i.imgur.com/5vZmWBO.png',
         name: 'Jane Doe',
         hostel : 'Hostel 2',
-        intime : '13:50', 
-        outtime : '13:50',
-        year : 2
+        intime : '10:34', 
+        outtime : '15:29',
+        year : 2,
+        date: '2022-10-27'
     },
     {
         id: 2007897,
         avatar : 'https://i.imgur.com/5vZmWBO.png',
         name: 'Jack Doe',
-        intime : '13:50', 
-        outtime : '13:50',
+        intime : '01:53', 
+        outtime : '17:21',
         hostel : 'Hostel 3',
-        year : 3
+        year : 3,
+        date: '2022-10-28'
     },
     
 ];
 
 
 const tablecolumns: GridColDef[] = [
-    { field: 'id', headerName: 'Roll No', width:100 },
-    { field: 'name', headerName: 'Name', width: 130 },
+    { field: 'id', headerName: 'Roll No', width:120 },
+    { field: 'name', headerName: 'Name', width: 120 },
     {
       field: 'intime',
       headerName: 'In-Time',
